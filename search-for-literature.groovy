@@ -75,7 +75,7 @@ def urlPatternList = [
       def phrases = p.split() 
       def concatinator = "+AND+"
       if(phrases.size() == 1){
-        ${phrases.head()}
+        phrases.head()
       } else {
       	concatinator + phrases.tail().join(concatinator) + "+${phrases.head()}"
       }
@@ -92,11 +92,6 @@ urlPatternList.each {literatureDb ->
   println("opening tab with url: ${curUrl}...")
   "${browserCommand} ${curUrl}".execute()
 }
-/**"+AND+requirements+AND+things+AND+internet+of"
-
-http://arxiv.org/find/all/1/all:+AND+llllll+AND+bdf+AND+asdf+asdf/0/1/0/all/0/1
-asdf asdf bdf llllll*/
-
 
 
 
