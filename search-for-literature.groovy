@@ -25,9 +25,9 @@ def showUsageAndExit = {
   cli.usage()
   System.exit(1)
 }	
+
 if(!options){
-  println("You need to specify an search phrase!")
-  showUsageAndExit()
+  System.exit(-1)
 }	
 if(options.h){
   showUsageAndExit()
