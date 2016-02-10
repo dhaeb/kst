@@ -89,6 +89,7 @@ def urlPatternList = [
   },
   new PlusConcatedLiteratureDb("https://scholar.google.de/scholar?hl=de&q=%s&btnG=&lr="),
   new PlusConcatedLiteratureDb("http://link.springer.com/search?query=%s&showAll=true"),
+  new PlusConcatedLiteratureDb("http://dl.acm.org/results.cfm?query=%s"),
   new ConcatLiteratureDb("http://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%s&newsearch=true", "%20")
 ]
 
