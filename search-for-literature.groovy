@@ -69,6 +69,12 @@ class ConcatLiteratureDb extends LiteratureDb {
     }
 }
 
+class PlusConcatedLiteratureDb extends ConcatLiteratureDb {
+  PlusConcatedLiteratureDb(String base){
+    super(base, "+")
+  }
+}
+
 def urlPatternList = [
   new LiteratureDb("http://arxiv.org/find/all/1/all:%s/0/1/0/all/0/1") {
     String convertSearchPhrase(String p) {
@@ -81,8 +87,8 @@ def urlPatternList = [
       }
     }
   },
-  new ConcatLiteratureDb("https://scholar.google.de/scholar?hl=de&q=%s&btnG=&lr=", "+"),
-  new ConcatLiteratureDb("http://link.springer.com/search?query=%s&showAll=true", "+"),
+  new PlusConcatedLiteratureDb("https://scholar.google.de/scholar?hl=de&q=%s&btnG=&lr="),
+  new PlusConcatedLiteratureDb("http://link.springer.com/search?query=%s&showAll=true"),
   new ConcatLiteratureDb("http://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%s&newsearch=true", "%20")
 ]
 
