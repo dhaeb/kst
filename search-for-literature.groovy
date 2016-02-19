@@ -90,7 +90,9 @@ def urlPatternList = [
   new PlusConcatedLiteratureDb("https://scholar.google.de/scholar?hl=de&q=%s&btnG=&lr="),
   new PlusConcatedLiteratureDb("http://link.springer.com/search?query=%s&showAll=true"),
   new PlusConcatedLiteratureDb("http://dl.acm.org/results.cfm?query=%s"),
-  new ConcatLiteratureDb("http://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%s&newsearch=true", "%20")
+  new ConcatLiteratureDb("http://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%s&newsearch=true", "%20"),
+  new PlusConcatedLiteratureDb("http://www.sciencedirect.com/science?_ob=QuickSearchURL&_method=submitForm&_acct=C000052823&searchtype=a&_origin=home&_zone=qSearch&md5=e33a5e4c240c76c7e65ce1d150c72358&qs_all=%s&qs_author=&qs_title=&qs_vol=&qs_issue=&qs_pages=&sdSearch=")
+  
 ]
 
 def browserCommand  = browsersCliCommandMapping.get(usedBrowser)
