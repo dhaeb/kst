@@ -42,14 +42,18 @@ if(! browsersCliCommandMapping.containsKey(usedBrowser)){
 def usedPhrase = options.p
 
 abstract class LiteratureDb {
-  String base
+  protected String base
   LiteratureDb(String base){
     this.base = base
   }
   abstract String convertSearchPhrase(String phrase)
   
   def toString(String phrase){
-    return String.format(base, convertSearchPhrase(phrase))
+    return String.format(getBaseURI(), convertSearchPhrase(phrase))
+  }
+  
+  def getBaseURI(){
+    return base
   }
 }
 
@@ -101,6 +105,3 @@ urlPatternList.each {literatureDb ->
   println("opening tab with url: ${curUrl}...")
   "${browserCommand} ${curUrl}".execute()
 }
-
-
-
