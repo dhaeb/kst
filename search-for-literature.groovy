@@ -83,10 +83,10 @@ class PlusConcatedLiteratureDb extends ConcatLiteratureDb {
   }
 }
 
-class WebOfScience extends PlusConcatedLiteratureDb {
+class WebOfScience extends ConcatLiteratureDb {
 
   WebOfScience(){
-    super("%s")
+    super("%s", ' ')
   }
   
   @Override
